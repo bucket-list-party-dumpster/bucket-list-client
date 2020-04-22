@@ -1,6 +1,6 @@
 'use strict'
 
-const store = require('./store')
+const store = require('./../store')
 
 const signUpSuccess = function (data) {
   $('#auth-message').text('Signed up successfully')
@@ -41,20 +41,6 @@ const signInFailure = function (error) {
 }
 
 const signOutSuccess = function (data) {
-  $('#auth-message').text('Password changed successfully')
-  $('#auth-message').removeClass()
-  $('#auth-message').addClass('success')
-  $('input[class=clear-on-submit]').val('')
-}
-
-const signOutFailure = function (error) {
-  $('#auth-message').text(error.status + ': ' + error.statusText)
-  $('#auth-message').removeClass()
-  $('#auth-message').addClass('failure')
-  $('input[class=clear-on-submit]').val('')
-}
-
-const changePasswordSuccess = function (data) {
   $('#auth-message').text('Signed out successfully')
   $('#auth-message').removeClass()
   $('#auth-message').addClass('success')
@@ -66,6 +52,20 @@ const changePasswordSuccess = function (data) {
   $('#user-lists').addClass('hidden')
   $('input[class=clear-on-submit]').val('')
   // console.log('signOutSuccess data is: ', data)
+}
+
+const signOutFailure = function (error) {
+  $('#auth-message').text(error.status + ': ' + error.statusText)
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('failure')
+  $('input[class=clear-on-submit]').val('')
+}
+
+const changePasswordSuccess = function (data) {
+  $('#auth-message').text('Password changed successfully')
+  $('#auth-message').removeClass()
+  $('#auth-message').addClass('success')
+  $('input[class=clear-on-submit]').val('')
 }
 
 const changePasswordFailure = function (error) {

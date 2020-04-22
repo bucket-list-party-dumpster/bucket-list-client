@@ -9,8 +9,8 @@ const authEvents = require('./auth/event.js')
 // require('./example')
 
 $(() => {
-  $('#sign-up').on('click', authEvents.onSignUp)
-  $('#sign-in').on('click', authEvents.onSignIn)
-  $('#change-pw').on('click', authEvents.onChangePassword)
-  $('#sign-out').on('click', authEvents.onSignOut)
+  $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#change-pw').on('submit', authEvents.onChangePassword)
+  $('#sign-out').on('submit', authEvents.onSignOut)
 })
