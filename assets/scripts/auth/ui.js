@@ -23,12 +23,12 @@ const signInSuccess = function (data) {
   $('#auth-message').removeClass()
   $('#auth-message').addClass('success')
   // Update UI Login views
-  // $('#sign-up').addClass('hidden')
-  // $('#sign-in').addClass('hidden')
-  // $('#change-pw').removeClass('hidden')
-  // $('#sign-out').removeClass('hidden')
+  $('#sign-up').addClass('hidden')
+  $('#sign-in').addClass('hidden')
+  $('#change-pw').removeClass('hidden')
+  $('#sign-out').removeClass('hidden')
   // Show UI List Views
-  // $('#user-lists').removeClass('hidden')
+  $('#bucket-list').removeClass('hidden')
   $('input[class=clear-on-submit]').val('')
 }
 
@@ -49,7 +49,8 @@ const signOutSuccess = function (data) {
   $('#sign-in').removeClass('hidden')
   $('#change-pw').addClass('hidden')
   $('#sign-out').addClass('hidden')
-  $('#user-lists').addClass('hidden')
+  // Update UI entries views
+  $('#bucket-list').addClass('hidden')
   $('input[class=clear-on-submit]').val('')
   // console.log('signOutSuccess data is: ', data)
 }
