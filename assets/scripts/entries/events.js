@@ -21,7 +21,7 @@ const onCreateEntry = event => {
 // On get entry:
 const onGetEntry = event => {
   event.preventDefault()
-  const entryId = $(event.target).data('id')
+  const charId = $(event.target).data('id')
 
   api.getEntry(entryId)
   // If succeed:
@@ -63,29 +63,29 @@ const onSaveEntry = event => {
     .catch(ui.failure)
 } // onSaveEntry
 
-// // First delete button press to confirm:
-// const onPressDelete = event => {
-//   event.preventDefault()
-//   const pressedButton = event.target
-//   $(pressedButton).unbind()
-//   $(pressedButton).html('Confirm deletion')
-//   $(pressedButton).css('background-color', '#f1a713')
-//   $(pressedButton).on('click', onDeleteEntry)
-// } // onPressDelete
+// First delete button press to confirm:
+const onPressDelete = event => {
+  event.preventDefault()
+  const pressedButton = event.target
+  $(pressedButton).unbind()
+  $(pressedButton).html('Confirm deletion')
+  $(pressedButton).css('background-color', '#f1a713')
+  $(pressedButton).on('click', onDeleteEntry)
+} // onPressDelete
 
-// // Adding handlers:
-// const addHandlers = () => {
-//   $('.content').on('click', '.btn-delete', onPressDelete)
-//   $('.content').on('click', '.btn-get', onGetCharacter)
-//   $('.content').on('submit', '#form-display-char', onSaveCharacter)
-// } // addHandlers
+// Adding handlbars and delete confirmation handlers:
+const addHandlers = () => {
+  $('#entry-viewer').on('click', '.update-button', onSaveEntry)
+  $('#entry-viewer').on('click', '.delete-button', onPressDelete)
+  $('#entry-viewer').on('click', '.complete-button', ui.onCompletePress)
+} // addHandlers
 
 module.exports = {
   onCreateEntry,
   onGetEntry,
-  onShowEntries,
+  onShowEntris,
   onDeleteEntry,
   onSaveEntry
-  // onPressDelete,
-  // addHandlers
+  onPressDelete,
+  addHandlers
 }
