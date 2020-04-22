@@ -1,8 +1,8 @@
 'use strict'
 
-const store = require('./../store.js')
-const useEntriesHandlerTemplate = require('./../templates/entries.handlebars')
-const useEntryHandlerTemplate = require('./../templates/entry.handlebars')
+// const store = require('./../store.js')
+const useEntriesHandlerTemplate = require('./../templates/entries-handler.handlebars')
+const useEntryHandlerTemplate = require('./../templates/entry-handler.handlebars')
 
 // SUCCESSES --------------------------
 
