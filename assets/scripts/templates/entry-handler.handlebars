@@ -1,0 +1,25 @@
+{{log entry}}
+<section data-id="{{entry._id}}">
+  <h4>Entry ID:</h4>
+  <h6>{{entry._id}}</h6>
+
+  <h4>Entry Title:</h4>
+  <p>
+    {{#if entry.title}}
+      {{entry.title}}
+    {{else}}
+      n/a
+    {{/if}}
+  </p>
+
+  <h4>Entry Description:</h4>
+  <p>
+    {{#if entry.description}}
+      {{entry.description}}
+    {{else}}
+      n/a
+    {{/if}}
+  </p>
+  <button data-id="{{entry._id}}" type="submit" class="update-button">Update</button>
+  <button data-id="{{entry._id}}" type="submit" class="delete-button">Delete</button>
+</section>
