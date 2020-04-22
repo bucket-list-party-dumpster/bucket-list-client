@@ -19,4 +19,5 @@ $(() => {
   $('#view-entry-by-id').on('submit', entryEvents.onGetEntry)
   $('#delete-entry-by-id').on('submit', entryEvents.onDeleteEntry)
   $('#update-entry-by-id').on('submit', entryEvents.onSaveEntry)
+  entryEvents.addHandlers()
 })
