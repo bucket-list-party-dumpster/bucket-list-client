@@ -12,6 +12,102 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Bucket List</h1>
+      <section id="authentication">
+
+        <h3>User Login</h3>
+
+        <div id="auth-message" class="message"></div>
+
+        <div id="sign-up" class="user-auth">
+          <h4>Sign Up</h4>
+          <form>
+            <fieldset>
+              <input type="text" name="credentials[email]" placeholder="Email" class="clear-on-submit">
+              <input type="password" name="credentials[password]" placeholder="Password" class="clear-on-submit">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" class="clear-on-submit">
+              <input type="submit" value="Sign Up" class="auth-button">
+            </fieldset>
+          </form>
+        </div>
+
+        <div id="sign-in" class="user-auth">
+          <h4>Sign In</h4>
+          <form>
+            <fieldset>
+              <input type="text" name="credentials[email]" placeholder="Email" class="clear-on-submit">
+              <input type="password" name="credentials[password]" placeholder="Password" class="clear-on-submit">
+              <input type="submit" value="Sign In" class="auth-button">
+            </fieldset>
+          </form>
+        </div>
+
+        <div id="change-pw" class="user-auth hidden">
+          <h4>Change Password</h4>
+          <form>
+            <fieldset>
+              <input type="password" name="passwords[old]" placeholder="Old Password" class="clear-on-submit">
+              <input type="password" name="passwords[new]" placeholder="New Password" class="clear-on-submit">
+              <input type="submit" value="Change Password" class="auth-button">
+            </fieldset>
+          </form>
+        </div>
+
+        <div id="sign-out" class="user-auth hidden">
+          <h4>Sign Out</h4>
+          <form>
+            <fieldset>
+              <input type="submit" value="Sign Out" class="auth-button">
+            </fieldset>
+          </form>
+        </div>
+
+      </section>
+
+      <section id="bucket-list" class="hidden">
+        <h3>My Bucket List</h3>
+
+        <form id="view-all-entries" class="form">
+          <fieldset>
+            <input type="submit" value="View My Entries" class="button">
+          </fieldset>
+        </form>
+
+        <form id="create-new-entry" class="form">
+          <fieldset>
+            <input type="text" name="entry[title]" placeholder="New Entry Title" class="clear-on-submit">
+            <input type="text" name="entry[description]" placeholder="New Entry Description" class="clear-on-submit">
+            <input type="submit" value="Add New Entry" class="button">
+          </fieldset>
+        </form>
+
+        <form id="view-entry-by-id" class="form">
+          <fieldset>
+            <input type="text" name="entry[id]" placeholder="Enter Entry ID Number" class="clear-on-submit">
+            <input type="submit" value="View My Entry" class="button">
+          </fieldset>
+        </form>
+
+        <form id="delete-entry-by-id" class="form">
+          <fieldset>
+            <input type="text" name="entry[id]" placeholder="Enter Entry ID Number" class="clear-on-submit">
+            <input type="submit" value="Delete My Entry" class="list-button">
+          </fieldset>
+        </form>
+
+        <form id="update-entry-by-id" class="form">
+          <fieldset>
+            <input type="text" name="entry[id]" placeholder="Enter Entry ID Number" class="clear-on-submit">
+            <input type="text" name="entry[title]" placeholder="Enter NEW Entry Title" class="clear-on-submit">
+            <input type="text" name="entry[description]" placeholder="Enter NEW Entry Description" class="clear-on-submit">
+            <input type="submit" value="Update This Entry" class="list-button">
+          </fieldset>
+        </form>
+
+        <div id="message-viewer"></div>
+        <div id="bucket-list-viewer"></div>
+
+      </section>
+
     </body>
 </html>
