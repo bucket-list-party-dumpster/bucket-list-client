@@ -44,6 +44,7 @@ const onShowEntries = event => {
 // On delete entry:
 const onDeleteEntry = (event) => {
   event.preventDefault()
+  console.log($(event.target).data('id'))
   api.deleteEntry($(event.target).data('id'))
     .then(function () {
       onShowEntries(event)
@@ -73,19 +74,23 @@ const onPressDelete = event => {
   $(pressedButton).on('click', onDeleteEntry)
 } // onPressDelete
 
+const onCompletePress = event => {
+
+}
+
 // Adding handlbars and delete confirmation handlers:
 const addHandlers = () => {
   $('#entry-viewer').on('click', '.update-button', onSaveEntry)
   $('#entry-viewer').on('click', '.delete-button', onPressDelete)
-  $('#entry-viewer').on('click', '.complete-button', ui.onCompletePress)
+  $('#entry-viewer').on('click', '.complete-button', onCompletePress)
 } // addHandlers
 
 module.exports = {
   onCreateEntry,
   onGetEntry,
-  onShowEntris,
+  onShowEntries,
   onDeleteEntry,
-  onSaveEntry
+  onSaveEntry,
   onPressDelete,
   addHandlers
 }

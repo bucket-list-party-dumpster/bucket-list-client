@@ -45,6 +45,7 @@ const getEntry = (entryId) => {
 
 // Delete an entry
 const deleteEntry = (entryId) => {
+  console.log('API: ' + entryId)
   return $.ajax({
     url: config.apiUrl + `/entries/${entryId}`,
     method: 'DELETE',
