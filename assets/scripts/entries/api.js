@@ -44,9 +44,9 @@ const getEntry = (entryId) => {
 } // getEntry
 
 // Delete an entry
-const deleteCharacter = (charId) => {
+const deleteEntry = (entryId) => {
   return $.ajax({
-    url: config.apiUrl + `/characters/${charId}`,
+    url: config.apiUrl + `/entries/${entryId}`,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

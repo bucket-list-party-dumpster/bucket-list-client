@@ -21,7 +21,7 @@ const onCreateEntry = event => {
 // On get entry:
 const onGetEntry = event => {
   event.preventDefault()
-  const charId = $(event.target).data('id')
+  const entryId = $(event.target).data('id')
 
   api.getEntry(entryId)
   // If succeed:
@@ -83,9 +83,9 @@ const onSaveEntry = event => {
 module.exports = {
   onCreateEntry,
   onGetEntry,
-  onShowEntris,
+  onShowEntries,
   onDeleteEntry,
   onSaveEntry
-  //onPressDelete,
-  //addHandlers
+  // onPressDelete,
+  // addHandlers
 }
