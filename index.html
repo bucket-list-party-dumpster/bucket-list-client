@@ -23,9 +23,12 @@
           <h4>Sign Up</h4>
           <form>
             <fieldset>
-              <input type="text" name="credentials[email]" placeholder="Email" class="clear-on-submit">
-              <input type="password" name="credentials[password]" placeholder="Password" class="clear-on-submit">
-              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" class="clear-on-submit">
+              <label for="fromEmail">Email</label>
+              <input required autocomplete="email" type="email" name="credentials[email] email" placeholder="Email" id="fromEmail" class="clear-on-submit">
+              <label for="fromPassword">Password</label>
+              <input required autocomplete="new-password" type="password" name="credentials[password] password" placeholder="Password" class="clear-on-submit" id="fromPassword">
+              <label for="fromPassword">Confirm Password</label>
+              <input required autocomplete="new-password" type="password" name="credentials[password_confirmation] password" placeholder="Confirm Password" class="clear-on-submit" id="fromPassword">
               <input type="submit" value="Sign Up" class="auth-button">
             </fieldset>
           </form>
@@ -35,8 +38,10 @@
           <h4>Sign In</h4>
           <form>
             <fieldset>
-              <input type="text" name="credentials[email]" placeholder="Email" class="clear-on-submit">
-              <input type="password" name="credentials[password]" placeholder="Password" class="clear-on-submit">
+              <label for="fromEmail">Email</label>
+              <input required autocomplete="email" type="email" name="credentials[email] email" placeholder="Email" class="clear-on-submit" id="fromEmail">
+              <label for="fromPassword">Password</label>
+              <input required autocomplete="current-password" type="password" name="credentials[password] password" placeholder="Password" class="clear-on-submit" id="fromPassword">
               <input type="submit" value="Sign In" class="auth-button">
             </fieldset>
           </form>
@@ -46,8 +51,10 @@
           <h4>Change Password</h4>
           <form>
             <fieldset>
-              <input type="password" name="passwords[old]" placeholder="Old Password" class="clear-on-submit">
-              <input type="password" name="passwords[new]" placeholder="New Password" class="clear-on-submit">
+              <label for="fromPassword">Current Password</label>
+              <input autocomplete="current-password" type="password" name="passwords[old] password" placeholder="Old Password" class="clear-on-submit">
+              <label for="fromPassword">New Password</label>
+              <input autocomplete="new-password" type="password" name="passwords[new] password" placeholder="New Password" class="clear-on-submit" id="fromPassword">
               <input type="submit" value="Change Password" class="auth-button">
             </fieldset>
           </form>
