@@ -14,6 +14,9 @@ const onCreateEntry = event => {
   api.createEntry(entry)
   // If succeed:
     .then(ui.onCreateEntrySuccess)
+    .then(function () {
+      onShowEntries(event)
+    })
   // If fail:
     .catch(ui.onCreateEntryFailure)
 } // onCreateEntry
