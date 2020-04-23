@@ -36,7 +36,6 @@ const onGetEntry = event => {
 // On show entry:
 const onShowEntries = event => {
   event.preventDefault()
-
   api.showEntries()
   // If succeed:
     .then(ui.onShowEntriesSuccess)
@@ -85,8 +84,19 @@ const onPressDelete = event => {
   $(pressedButton).on('click', onDeleteEntry)
 } // onPressDelete
 
-const onCompletePress = event => {
-
+const onTogglePress = event => {
+  const id = $(event.target).data('id')
+  const isComplete = $(event.target).data('completed')
+  const entry = {
+    entry: {
+      completed: !isComplete
+    }
+  }
+  api.saveEntry(entry, id)
+    .then(function () {
+      onShowEntries(event)
+    })
+    .catch(ui.failure)
 }
 
 // Adding handlbars and delete confirmation handlers:
@@ -95,7 +105,7 @@ const addHandlers = () => {
   $('#entry-viewer').on('click', '.update-button', onSaveEntryForm)
   $('#entry-viewer').on('submit', '#updateForm', onSaveEntry)
   $('#entry-viewer').on('click', '.delete-button', onPressDelete)
-  $('#entry-viewer').on('click', '.complete-button', onCompletePress)
+  $('#entry-viewer').on('click', '.toggle-button', onTogglePress)
 } // addHandlers
 
 module.exports = {

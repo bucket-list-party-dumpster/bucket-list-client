@@ -35,15 +35,16 @@ const onCreateEntrySuccess = responseData => {
 }
 
 const onSaveEntryFormSuccess = responseData => {
+  // console.log('sdfsdfsdfffffffff', responseData)
   const updateEntryHtml = useFormUpdateTemplate({ entry: responseData.entry })
   const entryDataId = responseData.entry._id
   $(`section[data-id=${entryDataId}]`).html(updateEntryHtml)
   $('#entry-message').empty()
 }
 
-const onSaveEntrySuccess = responseData => {
-
-}
+// const onCompleteEntrySuccess = responseData => {
+//
+// }
 
 // FAILURES -------------------------
 
@@ -76,11 +77,11 @@ const onCreateEntryFailure = () => {
 const onSaveEntryFormFailure = () => {
   $('#entry-message').text('Failed to save your entry. Please try again.')
 }
+
 module.exports = {
   onShowEntriesSuccess,
   onGetEntrySuccess,
   onCreateEntrySuccess,
-  onSaveEntrySuccess,
   onSaveEntryFormSuccess,
   onShowEntriesFailure,
   onGetEntryFailure,
