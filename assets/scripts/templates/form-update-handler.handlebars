@@ -1,9 +1,8 @@
-{{log entry}}
+{{!-- {{log entry}} --}}
     <form data-id="{{entry._id}}" id='updateForm'>
           <input type="text" name="entry[title]" value='{{entry.title}}' class="clear-on-submit">
           <input type="text" name="entry[description]" value='{{entry.description}}' class="clear-on-submit">
           <input type="submit" value="Update Entry" class="update-form-button">
     </form>
-  <button  data-id="{{entry._id}}" type="submit" class="update-button">Update</button>
   <button  data-id="{{entry._id}}" type="submit" class="cancel-button">Cancel</button>
   
