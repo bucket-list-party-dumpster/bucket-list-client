@@ -1,7 +1,7 @@
 
 {{!-- {{log entry}} --}}
 <section data-id="{{entry._id}}">
-  <h3 class="completed-{{entry.completed}}">{{entry.title}}: {{entry.description}}</h3>
+  <h3 class="completed-{{entry.completed}} entry">{{entry.title}}: {{entry.description}}</h3>
   <button data-id="{{entry._id}}" type="submit" class="update-button">Update</button>
 
   <button data-completed="{{entry.completed}}" data-id="{{entry._id}}" type="submit" class="toggle-button">
