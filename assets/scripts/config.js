@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://party-dumpster-bucket-list.herokuapp.com/',
+  production: 'https://party-dumpster-bucket-list.herokuapp.com',
   development: 'http://localhost:4741'
 }
 
