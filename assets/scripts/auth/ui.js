@@ -49,6 +49,7 @@ const signOutSuccess = function (data) {
   $('#sign-in').removeClass('hidden')
   $('#change-pw').addClass('hidden')
   $('#sign-out').addClass('hidden')
+  $('#entry-viewer').empty()
   // Update UI entries views
   $('#bucket-list').addClass('hidden')
   $('input[class=clear-on-submit]').val('')
