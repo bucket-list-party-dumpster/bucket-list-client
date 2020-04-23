@@ -3,14 +3,14 @@
 const store = require('./../store')
 
 const signUpSuccess = function (data) {
-  $('#auth-message').text('Signed up successfully')
+  $('#auth-message').text('Signed up successfully.')
   $('#auth-message').removeClass()
   $('#auth-message').addClass('success')
   $('input[class=clear-on-submit]').val('')
 }
 
-const signUpFailure = function (error) {
-  $('#auth-message').text(error.status + ': ' + error.statusText)
+const signUpFailure = function () {
+  $('#auth-message').text('Failed to sign up. Please try again.')
   $('#auth-message').removeClass()
   $('#auth-message').addClass('failure')
   $('input[class=clear-on-submit]').val('')
@@ -19,7 +19,7 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   store.user = data.user
   // Success-Failure Messages
-  $('#auth-message').text('Signed in successfully')
+  $('#auth-message').text('Signed in successfully.')
   $('#auth-message').removeClass()
   $('#auth-message').addClass('success')
   // Update UI Login views
@@ -32,8 +32,8 @@ const signInSuccess = function (data) {
   $('input[class=clear-on-submit]').val('')
 }
 
-const signInFailure = function (error) {
-  $('#auth-message').text(error.status + ': ' + error.statusText)
+const signInFailure = function () {
+  $('#auth-message').text('Failed to sign in. Please try again.')
   $('#auth-message').removeClass()
   $('#auth-message').addClass('failure')
   $('input[class=clear-on-submit]').val('')
@@ -41,7 +41,7 @@ const signInFailure = function (error) {
 }
 
 const signOutSuccess = function (data) {
-  $('#auth-message').text('Signed out successfully')
+  $('#auth-message').text('Signed out successfully.')
   $('#auth-message').removeClass()
   $('#auth-message').addClass('success')
   // Update UI login views
@@ -55,22 +55,22 @@ const signOutSuccess = function (data) {
   // console.log('signOutSuccess data is: ', data)
 }
 
-const signOutFailure = function (error) {
-  $('#auth-message').text(error.status + ': ' + error.statusText)
+const signOutFailure = function () {
+  $('#auth-message').text('Failed to sign out. Please try again.')
   $('#auth-message').removeClass()
   $('#auth-message').addClass('failure')
   $('input[class=clear-on-submit]').val('')
 }
 
 const changePasswordSuccess = function (data) {
-  $('#auth-message').text('Password changed successfully')
+  $('#auth-message').text('Password changed successfully.')
   $('#auth-message').removeClass()
   $('#auth-message').addClass('success')
   $('input[class=clear-on-submit]').val('')
 }
 
-const changePasswordFailure = function (error) {
-  $('#auth-message').text(error.status + ': ' + error.statusText)
+const changePasswordFailure = function () {
+  $('#auth-message').text('Failed to change password. Please try again.')
   $('#auth-message').removeClass()
   $('#auth-message').addClass('failure')
   $('input[class=clear-on-submit]').val('')

@@ -13,6 +13,7 @@ const onShowEntriesSuccess = responseData => {
   const viewEntriesHtml = useEntriesHandlerTemplate({ entries: responseData.entries })
   $('#entry-viewer').html(viewEntriesHtml)
   $('#entry-viewer').removeClass()
+  $('#entry-message').empty()
   $('input[class=clear-on-submit]').val('')
 }
 
@@ -37,6 +38,7 @@ const onSaveEntryFormSuccess = responseData => {
   const updateEntryHtml = useFormUpdateTemplate({ entry: responseData.entry })
   const entryDataId = responseData.entry._id
   $(`section[data-id=${entryDataId}]`).html(updateEntryHtml)
+  $('#entry-message').empty()
 }
 
 const onSaveEntrySuccess = responseData => {
@@ -46,8 +48,8 @@ const onSaveEntrySuccess = responseData => {
 // FAILURES -------------------------
 
 // When showing entries is failure:
-const onShowEntriesFailure = error => {
-  $('#entry-message').text(error.status + ': ' + error.statusText)
+const onShowEntriesFailure = () => {
+  $('#entry-message').text('Failed to retrieve your entries.')
   $('#entry-message').removeClass()
   $('#entry-message').addClass('failure')
   $('#entry-viewer').empty()
@@ -55,8 +57,8 @@ const onShowEntriesFailure = error => {
 }
 
 // When get entry is failure:
-const onGetEntryFailure = error => {
-  $('#entry-message').text(error.status + ': ' + error.statusText)
+const onGetEntryFailure = () => {
+  $('#entry-message').text('Failed to retrieve entry. Please try again.')
   $('#entry-message').removeClass()
   $('#entry-message').addClass('failure')
   $('#entry-viewer').empty()
@@ -64,15 +66,15 @@ const onGetEntryFailure = error => {
 }
 
 // When create entry is failure:
-const onCreateEntryFailure = error => {
-  $('#entry-message').text(error.status + ': ' + error.statusText)
+const onCreateEntryFailure = () => {
+  $('#entry-message').text('Failed to create entry. Please try again.')
   $('#entry-message').removeClass()
   $('#entry-message').addClass('failure')
   $('#entry-viewer').empty()
   $('input[class=clear-on-submit]').val('')
 }
-const onSaveEntryFormFailure = error => {
-  $('#entry-message').text(error.status + ': ' + error.statusText)
+const onSaveEntryFormFailure = () => {
+  $('#entry-message').text('Failed to save your entry. Please try again.')
 }
 module.exports = {
   onShowEntriesSuccess,
