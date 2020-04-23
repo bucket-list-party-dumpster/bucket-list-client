@@ -3,6 +3,7 @@
 // const store = require('./../store.js')
 const useEntriesHandlerTemplate = require('./../templates/entries-handler.handlebars')
 const useEntryHandlerTemplate = require('./../templates/entry-handler.handlebars')
+const useFormUpdateTemplate = require('./../templates/form-update-handler.handlebars')
 
 // SUCCESSES --------------------------
 
@@ -30,6 +31,16 @@ const onCreateEntrySuccess = responseData => {
   $('#entry-message').removeClass()
   $('#entry-message').addClass('success')
   $('input[class=clear-on-submit]').val('')
+}
+
+const onSaveEntryFormSuccess = responseData => {
+  const updateEntryHtml = useFormUpdateTemplate({ entry: responseData.entry })
+  const entryDataId = responseData.entry._id
+  $(`section[data-id=${entryDataId}]`).html(updateEntryHtml)
+}
+
+const onSaveEntrySuccess = responseData => {
+
 }
 
 // FAILURES -------------------------
@@ -60,12 +71,17 @@ const onCreateEntryFailure = error => {
   $('#entry-viewer').empty()
   $('input[class=clear-on-submit]').val('')
 }
-
+const onSaveEntryFormFailure = error => {
+  $('#entry-message').text(error.status + ': ' + error.statusText)
+}
 module.exports = {
   onShowEntriesSuccess,
   onGetEntrySuccess,
   onCreateEntrySuccess,
+  onSaveEntrySuccess,
+  onSaveEntryFormSuccess,
   onShowEntriesFailure,
   onGetEntryFailure,
-  onCreateEntryFailure
+  onCreateEntryFailure,
+  onSaveEntryFormFailure
 }

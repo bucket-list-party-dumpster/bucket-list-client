@@ -64,6 +64,14 @@ const onSaveEntry = event => {
     .catch(ui.failure)
 } // onSaveEntry
 
+const onSaveEntryForm = event => {
+  event.preventDefault()
+  const id = $(event.target).data('id')
+  api.getEntry(id)
+    .then(ui.onSaveEntryFormSuccess)
+    .catch(ui.onSaveEntryFormFailure)
+}
+
 // First delete button press to confirm:
 const onPressDelete = event => {
   event.preventDefault()
@@ -80,7 +88,9 @@ const onCompletePress = event => {
 
 // Adding handlbars and delete confirmation handlers:
 const addHandlers = () => {
-  $('#entry-viewer').on('click', '.update-button', onSaveEntry)
+  $('#entry-viewer').on('click', '.cancel-button', onShowEntries)
+  $('#entry-viewer').on('click', '.update-button', onSaveEntryForm)
+  $('#entry-viewer').on('submit', '#updateForm', onSaveEntry)
   $('#entry-viewer').on('click', '.delete-button', onPressDelete)
   $('#entry-viewer').on('click', '.complete-button', onCompletePress)
 } // addHandlers
@@ -91,6 +101,7 @@ module.exports = {
   onShowEntries,
   onDeleteEntry,
   onSaveEntry,
+  onSaveEntryForm,
   onPressDelete,
   addHandlers
 }
