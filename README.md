@@ -13,7 +13,7 @@ An app to record and track progress on your bucket list with the following capab
 ### Related Links
 - [Client Repository](https://github.com/bucket-list-party-dumpster/bucket-list-client)
 - [API Repository](https://github.com/bucket-list-party-dumpster/bucket-list-express-api)
-- [Client API](https://bucket-list-party-dumpster.github.io/bucket-list-client)
+- [Deployed Client](https://bucket-list-party-dumpster.github.io/bucket-list-client)
 - [Deployed API](https://party-dumpster-bucket-list.herokuapp.com/)
 
 ### Technologies Used
