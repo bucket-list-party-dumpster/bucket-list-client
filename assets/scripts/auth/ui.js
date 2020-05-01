@@ -37,7 +37,6 @@ const signInFailure = function () {
   $('#auth-message').removeClass()
   $('#auth-message').addClass('failure')
   $('input[class=clear-on-submit]').val('')
-  // console.log('signInFailure data is: ', error)
 }
 
 const signOutSuccess = function (data) {
@@ -53,7 +52,6 @@ const signOutSuccess = function (data) {
   // Update UI entries views
   $('#bucket-list').addClass('hidden')
   $('input[class=clear-on-submit]').val('')
-  // console.log('signOutSuccess data is: ', data)
 }
 
 const signOutFailure = function () {
@@ -75,7 +73,6 @@ const changePasswordFailure = function () {
   $('#auth-message').removeClass()
   $('#auth-message').addClass('failure')
   $('input[class=clear-on-submit]').val('')
-  // console.log('signOutFailure data is: ', error)
 }
 
 module.exports = {
