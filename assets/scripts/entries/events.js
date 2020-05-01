@@ -46,7 +46,6 @@ const onShowEntries = event => {
 // On delete entry:
 const onDeleteEntry = (event) => {
   event.preventDefault()
-  // console.log($(event.target).data('id'))
   api.deleteEntry($(event.target).data('id'))
     .then(function () {
       onShowEntries(event)

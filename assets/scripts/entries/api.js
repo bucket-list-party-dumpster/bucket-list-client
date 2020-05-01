@@ -1,9 +1,5 @@
 'use strict'
 
-// All games action requests must include a valid HTTP header
-// Authorization: Token token=<token> or they will be rejected
-// with a status of 401 Unauthorized.
-
 const config = require('../config.js')
 const store = require('../store.js')
 
@@ -45,7 +41,6 @@ const getEntry = (entryId) => {
 
 // Delete an entry
 const deleteEntry = (entryId) => {
-  // console.log('API: ' + entryId)
   return $.ajax({
     url: config.apiUrl + `/entries/${entryId}`,
     method: 'DELETE',
@@ -55,7 +50,7 @@ const deleteEntry = (entryId) => {
   }) // return
 } // deleteEntry
 
-// Save a character:
+// Save an entry:
 const saveEntry = (entryData, entryId) => {
   return $.ajax({
     url: config.apiUrl + `/entries/${entryId}`,
