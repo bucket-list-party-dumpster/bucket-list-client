@@ -43,7 +43,7 @@ const signOutSuccess = function (data) {
   $('#auth-message').text('Signed out successfully.')
   $('#auth-message').removeClass()
   $('#auth-message').addClass('success')
-  // Update UI login views
+  // Update UI login view
   $('#sign-up').removeClass('hidden')
   $('#sign-in').removeClass('hidden')
   $('#change-pw').addClass('hidden')
@@ -51,6 +51,7 @@ const signOutSuccess = function (data) {
   $('#entry-viewer').empty()
   // Update UI entries views
   $('#bucket-list').addClass('hidden')
+  $('#entry-message').addClass('hidden')
   $('input[class=clear-on-submit]').val('')
 }
 
