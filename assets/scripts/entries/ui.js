@@ -11,6 +11,7 @@ const useFormUpdateTemplate = require('./../templates/form-update-handler.handle
 const onShowEntriesSuccess = responseData => {
   // Success-Failure Messages
   if (responseData.entries.length === 0) {
+    $('#entry-viewer').html('')
     $('#entry-message').text('You have nothing on your list yet!')
     $('#entry-message').removeClass()
     $('#entry-message').addClass('failure')
