@@ -10,11 +10,17 @@ const useFormUpdateTemplate = require('./../templates/form-update-handler.handle
 // When showing entries is successful:
 const onShowEntriesSuccess = responseData => {
   // Success-Failure Messages
-  const viewEntriesHtml = useEntriesHandlerTemplate({ entries: responseData.entries })
-  $('#entry-viewer').html(viewEntriesHtml)
-  $('#entry-viewer').removeClass()
-  $('#entry-message').empty()
-  $('input[class=clear-on-submit]').val('')
+  if(responseData.entries.length === 0) {
+    $('#entry-message').text('You have nothing on your list yet!')
+    $('#entry-message').removeClass()
+    $('#entry-message').addClass('failure')
+  } else {
+    const viewEntriesHtml = useEntriesHandlerTemplate({ entries: responseData.entries })
+    $('#entry-viewer').html(viewEntriesHtml)
+    $('#entry-viewer').removeClass()
+    $('#entry-message').empty()
+    $('input[class=clear-on-submit]').val('')
+  }
 }
 
 // When get entry is success:
