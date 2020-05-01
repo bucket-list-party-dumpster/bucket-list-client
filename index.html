@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Bucket List</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>Bucket List</h1>
+      <section id="authentication">
+
+        <h3>User Login</h3>
+
+        <div id="auth-message" class="message"></div>
+
+        <div id="sign-up" class="user-auth">
+          <h4>Sign Up</h4>
+          <form>
+            <fieldset>
+              <label>Email</label>
+              <input type="email" name="credentials[email] email" placeholder="Email" class="clear-on-submit">
+              <label>Password</label>
+              <input type="password" name="credentials[password] password" placeholder="Password" class="clear-on-submit">
+              <label>Confirm Password</label>
+              <input type="password" name="credentials[password_confirmation] password" placeholder="Confirm Password" class="clear-on-submit">
+              <input type="submit" value="Sign Up" class="auth-button">
+            </fieldset>
+          </form>
+        </div>
+
+        <div id="sign-in" class="user-auth">
+          <h4>Sign In</h4>
+          <form>
+            <fieldset>
+              <label for="fromEmail">Email</label>
+              <input required autocomplete="email" type="email" name="credentials[email] email" placeholder="Email" class="clear-on-submit" id="fromEmail">
+              <label for="fromPassword">Password</label>
+              <input required autocomplete="current-password" type="password" name="credentials[password] password" placeholder="Password" class="clear-on-submit" id="fromPassword">
+              <input type="submit" value="Sign In" class="auth-button">
+            </fieldset>
+          </form>
+        </div>
+
+        <div id="change-pw" class="user-auth hidden">
+          <h4>Change Password</h4>
+          <form>
+            <fieldset>
+              <label>Current Password</label>
+              <input type="password" name="passwords[old] password" placeholder="Old Password" class="clear-on-submit">
+              <label>New Password</label>
+              <input type="password" name="passwords[new] password" placeholder="New Password" class="clear-on-submit">
+              <input type="submit" value="Change Password" class="auth-button">
+            </fieldset>
+          </form>
+        </div>
+
+        <div id="sign-out" class="user-auth hidden">
+          <h4>Sign Out</h4>
+          <form>
+            <fieldset>
+              <input type="submit" value="Sign Out" class="auth-button">
+            </fieldset>
+          </form>
+        </div>
+
+      </section>
+
+      <section id="bucket-list" class="hidden">
+        <h3>My Bucket List</h3>
+
+        <form id="view-all-entries" class="form">
+          <fieldset>
+            <input type="submit" value="View My Entries" class="button">
+          </fieldset>
+        </form>
+
+        <form id="create-new-entry" class="form">
+          <fieldset>
+            <input type="text" name="entry[title]" placeholder="New Entry Title" class="clear-on-submit">
+            <input type="text" name="entry[description]" placeholder="New Entry Description" class="clear-on-submit">
+            <input type="submit" value="Add New Entry" class="button">
+          </fieldset>
+        </form>
+
+        <div id="entry-message"></div>
+        <div id="entry-viewer"></div>
+
+      </section>
+
+    </body>
+</html>
